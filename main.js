@@ -110,7 +110,7 @@ var AmazonSES = (function() {
      */
     verifyEmailAddress: function(email, callback) {
       call({
-          query: {'Action': 'VerifyEmailAddress', 'EmailAddress': email}
+          query: {'Action': 'VerifyEmailIdentity', 'EmailAddress': email}
         , callback: function(err, data) {
             if (err) throw err;
             if (callback) {
@@ -128,7 +128,7 @@ var AmazonSES = (function() {
      */
     listVerifiedEmailAddresses: function(callback) {
       call({
-          query: {'Action': 'ListVerifiedEmailAddresses'}
+          query: {'Action': 'ListIdentities'}
         , callback: function(err, data) {
             if (err) throw err;
 
@@ -150,7 +150,7 @@ var AmazonSES = (function() {
      */
     deleteVerifiedEmailAddress: function(email, callback) {
       call({
-          query: {'Action': 'DeleteVerifiedEmailAddress', 'EmailAddress': email}
+          query: {'Action': 'DeleteIdentity', 'EmailAddress': email}
         , callback: function(err, data) {
             if (err) throw err;
 
