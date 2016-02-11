@@ -128,7 +128,7 @@ var AmazonSES = (function() {
      */
     listVerifiedEmailAddresses: function(callback) {
       call({
-          query: {'Action': 'ListIdentities'}
+          query: {'Action': 'ListVerifiedEmailAddresses'}
         , callback: function(err, data) {
             if (err) throw err;
 
